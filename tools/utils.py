@@ -3,6 +3,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from json import load as json_load
 from urllib.request import urlopen
 
+from chronos.settings import ASYNC_MAX_WORKERS
+
 
 def request(url):
     print('Requesting {} ...'.format(url))
@@ -17,7 +19,7 @@ def request_json(url):
 
 def async_requests(urls):
     result = {}
-    with ThreadPoolExecutor(max_workers=20) as executor:
+    with ThreadPoolExecutor(max_workers=ASYNC_MAX_WORKERS) as executor:
         fs = { executor.submit(request_json, url): url for url in urls }
         for future in as_completed(fs): # yield as soon as completed
             url = fs[future]

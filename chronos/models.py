@@ -1,11 +1,8 @@
-from datetime import datetime
-from itertools import chain
-from _sha256 import sha224
 from uuid import uuid4
 
 from django.contrib.auth.models import AbstractBaseUser
-from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
+
 
 class Room(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
@@ -19,6 +16,12 @@ class Lesson(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     api_id = models.IntegerField()
     name = models.CharField(max_length=255)
-    room = models.ForeignKey(to=Room)
+    rooms = models.ManyToManyField(Room)
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
+    duration = models.IntegerField()
+
+
+class Group(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    api_id = models.IntegerField()

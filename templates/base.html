@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+  <!-- Custom -->
+  <style>
+    .svg-container {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      padding-bottom: 100%;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+    .svg-content {
+       display: inline-block;
+       position: absolute;
+       top: 0;
+       left: 0;
+     }
+  </style>
+  {% block head %}{% endblock head %}
+</head>
+<body>
+<nav class="navbar navbar-light bg-faded">
+  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+    &#9776;
+  </button>
+  <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+    <a class="navbar-brand" href="#">Responsive navbar</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Free Rooms</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-header">Kremlin-Bicêtre</a>
+          <a class="dropdown-item" href="#">Voltaire Etg 2</a>
+          <a class="dropdown-item" href="#">Voltaire Etg 1</a
+            >
+          <a class="dropdown-item" href="#">Voltaire RDC</a>
+          <a class="dropdown-item" href="#">Voltaire Etg -1</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Pasteur Etg 1</a>
+          <a class="dropdown-item" href="#">Pasteur RDC</a>
+          <a class="dropdown-item" href="#">Pasteur Etg -1</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Paritalie 5</a>
+          <a class="dropdown-item" href="#">Paritalie 2</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-header">Villejuif</a>
+          <a class="dropdown-item" href="#">VA 3xx</a>
+          <a class="dropdown-item" href="#">VA 2xx</a>
+          <a class="dropdown-item" href="#">VA 1xx</a>
+          <a class="dropdown-item" href="#">VA RDC</a>
+          <a class="dropdown-item" href="#">VA -1</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  {% block contents %}{% endblock contents %}
+</div>
+
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+<!-- Custom -->
+{% block scripts %}{% endblock scripts %}
+</body>
+</html>
